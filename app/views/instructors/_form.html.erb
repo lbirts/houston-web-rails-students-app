@@ -1,0 +1,15 @@
+<% if flash[:errors]%>
+    <% flash[:errors].each do |e| %>
+        <li style="color: red">
+            <%= e %>
+        </li>
+    <%end%>
+<%end%>
+
+<%= form_with model: @instructor do |f|%>
+    <%= f.label :name %>
+    <%= f.text_field :name%>
+    <br>
+    <br>
+    <%= f.submit%>
+<%end%>

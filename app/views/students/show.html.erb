@@ -1,0 +1,19 @@
+<h3>Student Info</h3>
+<h4>Name:</h4>
+<%= @student.name %>
+
+<h4>Major:</h4>
+<%= @student.major %>
+
+<h4>Age:</h4>
+<%= @student.age %>
+
+<h4>Instructor:</h4>
+<%= link_to @student.instructor.name, instructor_path(@student.instructor) %>
+<br>
+<br>
+<%= link_to "Edit Student", edit_student_path(@student)%>
+
+<%= form_with model: @student, method: :delete do |f|  %>
+<%= f.submit "Delete Student" %>
+<% end %>
